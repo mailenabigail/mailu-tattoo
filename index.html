@@ -1,0 +1,573 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<meta name="description" content="Mailu Tattoo - Tatuajes personalizados con diseño profesional. Consultá por tu idea y reservá tu turno por WhatsApp.">
+<meta name="keywords" content="tatuajes, tattoo, tatuadora, diseño personalizado, tatuajes finos">
+<meta name="author" content="Mailu Tattoo">
+<meta property="og:title" content="Mailu Tattoo - Tatuajes personalizados">
+<meta property="og:description" content="Diseños únicos y personalizados. Reservá tu turno por WhatsApp.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="URL_DE_TU_MEJOR_IMAGEN">
+
+<title>Mailu | Tatuadora Profesional</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600&family=Poppins:wght@300;400;500&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box;scroll-behavior:smooth;}
+
+html{
+    scroll-behavior:smooth;
+}
+
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#0e0e0e;
+    color:#eaeaea;
+    padding-top:50px;
+}
+
+.hero{
+    min-height:90vh;
+    background:linear-gradient(135deg,#0e0e0e,#1c1c1c,#2a0026);
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:20px;
+}
+
+.hero h1{
+    font-family:'Playfair Display',serif;
+    font-size:3.5rem;
+    letter-spacing:2px;
+}
+
+.hero span{color:#ff82e2;}
+
+.hero p{
+    margin-top:15px;
+    font-size:1.2rem;
+    color:#ccc;
+    max-width:650px;
+}
+
+.hero button{
+    margin-top:30px;
+    padding:12px 30px;
+    border:none;
+    border-radius:30px;
+    background:linear-gradient(45deg,#ff82e2,#e66fc7);
+    color:#111;
+    font-weight:600;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.hero button:hover{
+    transform:scale(1.05);
+    box-shadow:0 0 20px rgba(255,130,226,0.6);
+}
+
+.section{
+    padding:90px 20px;
+    max-width:1100px;
+    margin:auto;
+}
+
+.section h2{
+    text-align:center;
+    font-family:'Playfair Display',serif;
+    font-size:2.3rem;
+    margin-bottom:50px;
+}
+
+.section h2::after{
+    content:'';
+    display:block;
+    width:70px;
+    height:3px;
+    background:#ff82e2;
+    margin:15px auto;
+}
+
+/* SOBRE MI */
+
+.about{
+    max-width:800px;
+    margin:auto;
+    text-align:center;
+    color:#ccc;
+    line-height:1.8;
+}
+
+/* GALERIA */
+
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.gallery img{
+    width:100%;
+    height:300px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.5s;
+    cursor:pointer;
+    filter:brightness(0.9);
+}
+
+.gallery img:hover{
+    transform:scale(1.05);
+    filter:brightness(1);
+}
+
+
+/* FAQ */
+
+.faq-item{
+    margin-bottom:15px;
+    border-radius:10px;
+    overflow:hidden;
+}
+
+.faq-question{
+    background:#1a1a1a;
+    padding:15px;
+    cursor:pointer;
+    font-weight:500;
+}
+
+.faq-answer{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.4s ease;
+    background:#222;
+    padding:0 15px;
+}
+
+.faq-answer p{
+    padding:15px 0;
+    color:#ccc;
+}
+
+
+/* BOTON FLOTANTE */
+
+.whatsapp-float{
+    animation:pulse 2s infinite;
+    position:fixed;
+    bottom:20px;
+    right:20px;
+    background:#25D366;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:28px;
+    color:white;
+    text-decoration:none;
+    box-shadow:0 0 20px rgba(0,0,0,0.5);
+    transition:0.3s;
+}
+
+.whatsapp-float:hover{
+    transform:scale(1.1);
+}
+
+@keyframes pulse{
+    0%{box-shadow:0 0 0 0 rgba(37,211,102,0.6);}
+    70%{box-shadow:0 0 0 15px rgba(37,211,102,0);}
+    100%{box-shadow:0 0 0 0 rgba(37,211,102,0);}
+}
+
+.footer{
+    background:#111;
+    padding:30px 20px;
+    text-align:center;
+    margin-top:10px;
+}
+
+.footer h3{
+    font-family:'Playfair Display',serif;
+    color:#fff;
+    margin-bottom:10px;
+}
+
+.footer p{
+    color:#aaa;
+    margin:10px 0;
+}
+
+.footer-links{
+    margin:10px 0;
+}
+
+.footer-links a{
+    color:#ff82e2;
+    margin:0 15px;
+    text-decoration:none;
+    font-weight:500;
+    transition:0.3s;
+}
+
+.footer-links a:hover{
+    color:#fff;
+}
+
+.copyright{
+    font-size:0.8rem;
+    color:#666;
+    margin-top:10px;
+}
+
+.navbar{
+    position:fixed;
+    top:0;
+    width:100%;
+    background:rgba(0,0,0,0.85);
+    backdrop-filter:blur(8px);
+    padding:15px 40px;
+    z-index:10000;
+}
+
+.nav-container{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-family:'Playfair Display',serif;
+    color:#ff82e2;
+    font-size:1.3rem;
+}
+
+.nav-links{
+    list-style:none;
+    display:flex;
+    gap:30px;
+}
+
+.nav-links a{
+    color:#ddd;
+    text-decoration:none;
+    font-size:0.95rem;
+    transition:0.3s;
+}
+
+.nav-links a:hover{
+    color:#ff82e2;
+}
+
+.nav-links a.active{
+    color:#ff82e2;
+}
+
+
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:all 0.8s ease;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+
+
+@media(max-width:768px){
+.hero h1{font-size:2.5rem;}
+}
+</style>
+</head>
+
+<a href="https://wa.me/1234567890?text=Hola%20Mailu%2C%20vi%20tu%20p%C3%A1gina%20y%20quiero%20consultar%20por%20un%20tatuaje." 
+   class="whatsapp-float" 
+   target="_blank">
+   💬
+</a>
+
+
+
+<body>
+
+<nav class="navbar">
+    <div class="nav-container">
+        <div class="logo"></div>
+        <ul class="nav-links">
+            <li><a href="#sobre">Sobre mí</a></li>
+            <li><a href="#trabajos">Trabajos</a></li>
+            <li><a href="#faq">Preguntas</a></li>
+        </ul>
+    </div>
+</nav>
+
+
+<section class="hero">
+    <h1><span>Mailu</span> Tattoo</h1>
+    <p>Soy tatuadora y trabajo cada diseño de forma personalizada. Me importa que te sientas cómodo/a y que tu tatuaje represente algo real para vos.</p>
+    <button onclick="window.location.href='https://wa.me/1234567890'">Agendar Turno</button>
+</section>
+
+<section id="sobre" class="section reveal">
+    <h2>Sobre mí</h2>
+    <div class="about">
+        <p>Me especializo en diseños personalizados y trabajo cada pieza con dedicación y detalle. Mi prioridad es que vivas una buena experiencia, desde la idea inicial hasta la curación final.</p>
+    </div>
+</section>
+
+<section id="trabajos" class="section reveal">
+    <h2>Trabajos</h2>
+    <div class="gallery">
+        <img src="https://images.unsplash.com/photo-1598300053655-88f6a3c81f6b">
+        <img src="https://images.unsplash.com/photo-1597002966821-8a6b3f41b8f5">
+        <img src="https://images.unsplash.com/photo-1604004555489-723a93d6ce74">
+        <img src="https://images.unsplash.com/photo-1582729785483-65d4b37e3c55">
+    </div>
+</section>
+
+<section id="faq" class="section reveal">
+    <h2>Preguntas Frecuentes</h2>
+<div class="faq-item">
+<div class="faq-question">1. ¿Duele hacerse un tatuaje?</div>
+<div class="faq-answer"><p>Depende mucho de la zona y de tu tolerancia al dolor. Generalmente se siente como un ardor constante o un raspado leve.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">2. ¿Cuánto tarda en sanar?</div>
+<div class="faq-answer"><p>La parte superficial sana en 2 a 4 semanas. La curación completa interna puede tardar un poco más.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">3. ¿Qué cuidados tengo que seguir?</div>
+<div class="faq-answer"><p>Te doy todas las indicaciones después de tatuarte: limpieza suave, crema recomendada y evitar sol o pileta durante las primeras semanas.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">4. ¿Cuánto cuesta un tatuaje?</div>
+<div class="faq-answer"><p>El precio depende del tamaño, detalle y ubicación. Siempre prefiero que me mandes la idea así puedo pasarte un presupuesto personalizado.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">5. ¿Hacés diseños personalizados?</div>
+<div class="faq-answer"><p>Sí, me especializo en diseños personalizados. Trabajo la idea con vos hasta que quede exactamente como lo imaginás.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">6. ¿Cuánto dura una sesión?</div>
+<div class="faq-answer"><p>Puede durar desde 30 minutos hasta varias horas, según el tamaño y nivel de detalle.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">7. ¿Qué edad mínima necesito?</div>
+<div class="faq-answer"><p>La edad mínima es 18 años. En algunos casos se puede con autorización, dependiendo la normativa vigente.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">8. ¿Puedo llevar mi propio diseño?</div>
+<div class="faq-answer"><p>Sí, podés traer referencias o ideas. Después lo adaptamos para que funcione bien como tatuaje.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">9. ¿Se puede tapar un tatuaje viejo?</div>
+<div class="faq-answer"><p>Sí, hago covers. Primero necesito ver el tatuaje actual para evaluar opciones reales.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">10. ¿Usás materiales descartables?</div>
+<div class="faq-answer"><p>Sí, trabajo con materiales descartables y bajo normas estrictas de higiene.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">11. ¿Puedo tatuarme si estoy tomando medicación?</div>
+<div class="faq-answer"><p>Depende del medicamento. Siempre avisame antes para evaluar si es seguro.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">12. ¿Qué pasa si me mareo?</div>
+<div class="faq-answer"><p>Es raro, pero puede pasar. Por eso recomiendo venir bien comido/a y descansado/a.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">13. ¿Puedo tomar alcohol antes?</div>
+<div class="faq-answer"><p>No. El alcohol diluye la sangre y afecta el proceso del tatuaje.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">14. ¿Cuándo puedo hacer ejercicio?</div>
+<div class="faq-answer"><p>Recomiendo esperar al menos una semana, dependiendo la zona tatuada.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">15. ¿Se puede ir al sol?</div>
+<div class="faq-answer"><p>No durante la cicatrización. Después siempre protector solar.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">16. ¿Puedo nadar?</div>
+<div class="faq-answer"><p>No durante las primeras semanas. El agua de pileta o mar puede afectar la curación.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">17. ¿Los colores se van con el tiempo?</div>
+<div class="faq-answer"><p>Con los años pueden suavizarse, pero con buen cuidado se mantienen muy bien.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">18. ¿Hacés tatuajes pequeños?</div>
+<div class="faq-answer"><p>Sí, hago desde minimalistas hasta piezas grandes.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">19. ¿Trabajás con señas?</div>
+<div class="faq-answer"><p>Sí, para reservar turno se requiere una seña.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">20. ¿Qué pasa si cancelo?</div>
+<div class="faq-answer"><p>Si avisás con tiempo podemos reprogramar. Las condiciones se informan al reservar.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">21. ¿Puedo venir acompañado/a?</div>
+<div class="faq-answer"><p>Depende del espacio y organización del día. Consultame antes.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">22. ¿Qué zonas duelen más?</div>
+<div class="faq-answer"><p>Costillas, pies y zonas con poca grasa suelen ser más sensibles.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">23. ¿Cuánto tiempo tengo que esperar para retocar?</div>
+<div class="faq-answer"><p>Generalmente después de la curación completa, unas 4 a 6 semanas.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">24. ¿Los tatuajes son permanentes?</div>
+<div class="faq-answer"><p>Sí. Existen tratamientos láser, pero siempre es mejor decidir con seguridad antes.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">25. ¿Puedo tatuarme si tengo piel sensible?</div>
+<div class="faq-answer"><p>Sí, pero siempre avisame si tenés antecedentes de alergias.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">26. ¿Hacés asesoramiento?</div>
+<div class="faq-answer"><p>Sí, si no tenés el diseño claro podemos trabajarlo juntos.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">27. ¿Cuánto tiempo dura el dolor?</div>
+<div class="faq-answer"><p>Las primeras 24-48 hs puede sentirse sensibilidad leve.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">28. ¿Se puede tatuar sobre cicatrices?</div>
+<div class="faq-answer"><p>En muchos casos sí, dependiendo el tipo y antigüedad de la cicatriz.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">29. ¿Hacés todos los estilos?</div>
+<div class="faq-answer"><p>Trabajo principalmente los estilos que mejor representen mi línea artística.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">30. ¿Cuánto tiempo tengo que pensarlo?</div>
+<div class="faq-answer"><p>El tiempo que necesites. Un tatuaje es para siempre.</p></div>
+</div>
+
+<div class="faq-item">
+<div class="faq-question">31-50. ¿Otras consultas frecuentes?</div>
+<div class="faq-answer"><p>Si no encontrás tu pregunta acá, podés escribirme directamente por WhatsApp y te respondo personalmente.</p></div>
+</div>
+</section>
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+    const questions = document.querySelectorAll(".faq-question");
+
+    questions.forEach(question => {
+        question.addEventListener("click", function() {
+            const answer = this.nextElementSibling;
+
+            if (answer.style.maxHeight) {
+                answer.style.maxHeight = null;
+            } else {
+                document.querySelectorAll(".faq-answer").forEach(item => {
+                    item.style.maxHeight = null;
+                });
+                answer.style.maxHeight = answer.scrollHeight + "px";
+            }
+        });
+    });
+});
+</script>
+
+<footer class="footer">
+    <div class="footer-content">
+        <h3>Mailu Tattoo</h3>
+        <p>Tatuajes personalizados con dedicación y atención real en cada detalle.</p>
+        
+        <div class="footer-links">
+            <a href="https://www.instagram.com/mailutattoo" target="_blank">Instagram</a>
+            <a href="https://wa.me/1234567890" target="_blank">WhatsApp</a>
+        </div>
+
+        <p class="copyright">
+            © 2026 Mailu Tattoo · Todos los derechos reservados
+        </p>
+    </div>
+</footer>
+
+<script>
+const reveals = document.querySelectorAll(".reveal");
+
+window.addEventListener("scroll", function(){
+    reveals.forEach(reveal => {
+        const windowHeight = window.innerHeight;
+        const revealTop = reveal.getBoundingClientRect().top;
+        const revealPoint = 100;
+
+        if(revealTop < windowHeight - revealPoint){
+            reveal.classList.add("active");
+        }
+    });
+});
+</script>
+
+<script>
+const sections = document.querySelectorAll("section");
+const navLinks = document.querySelectorAll(".nav-links a");
+
+window.addEventListener("scroll", () => {
+    let current = "";
+
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 100;
+        if(pageYOffset >= sectionTop){
+            current = section.getAttribute("id");
+        }
+    });
+
+    navLinks.forEach(a => {
+        a.classList.remove("active");
+        if(a.getAttribute("href") === "#" + current){
+            a.classList.add("active");
+        }
+    });
+});
+</script>
