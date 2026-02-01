@@ -110,36 +110,59 @@ body{
 .carousel {
     overflow: hidden;
     width: 100%;
-    border-radius: 15px;
     margin-top: 20px;
 }
 
 .carousel-track {
     display: flex;
-    width: max-content;
-    animation: scroll 40s linear infinite;
+    gap: 15px;
 }
 
 .carousel-track img {
     width: 300px;
     height: 350px;
     object-fit: cover;
-    margin-right: 15px;
     border-radius: 12px;
     flex-shrink: 0;
 }
 
-.carousel-track:hover {
-    animation-play-state: paused;
+/* ===== DESKTOP (automático) ===== */
+@media (min-width: 769px) {
+    .carousel-track {
+        animation: scroll 40s linear infinite;
+        width: max-content;
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
 }
 
-
-@keyframes scroll {
-    from {
-        transform: translateX(0);
+/* ===== MÓVIL (manual con dedo) ===== */
+@media (max-width: 768px) {
+    .carousel {
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
     }
-    to {
-        transform: translateX(-50%);
+
+    .carousel-track {
+        animation: none;
+    }
+
+    .carousel-track img {
+        scroll-snap-align: center;
+        width: 80%;
+        height: 320px;
+    }
+
+    .carousel::-webkit-scrollbar {
+        display: none;
     }
 }
 
@@ -364,12 +387,26 @@ body{
         <img src="img/tatuaje3.png">
         <img src="img/tatuaje4.png">
         <img src="img/tatuaje5.jpg">
+        <img src="img/tatuaje6.png">
+        <img src="img/tatuaje7.png">
+        <img src="img/tatuaje8.png">
+        <img src="img/tatuaje9.png">
+        <img src="img/tatuaje10.png">
+        <img src="img/tatuaje11.png">
+        <img src="img/tatuaje12.png">
 
         <img src="img/tatuaje1.jpg">
         <img src="img/tatuaje2.png">
         <img src="img/tatuaje3.png">
         <img src="img/tatuaje4.png">
         <img src="img/tatuaje5.jpg">
+        <img src="img/tatuaje6.png">
+        <img src="img/tatuaje7.png">
+        <img src="img/tatuaje8.png">
+        <img src="img/tatuaje9.png">
+        <img src="img/tatuaje10.png">
+        <img src="img/tatuaje11.png">
+        <img src="img/tatuaje12.png">
 
         </div>
     </div>
